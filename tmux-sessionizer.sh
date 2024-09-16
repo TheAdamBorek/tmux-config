@@ -4,7 +4,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Developer ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$( (find ~/Developer ~/.config -mindepth 1 -maxdepth 1 -type d; echo ~/Desktop/) | sort -r | fzf )
 fi
 
 if [[ -z $selected ]]; then
